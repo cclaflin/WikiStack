@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -26,6 +27,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+//Mongo DB connection
+mongoose.connect('mongodb://localhost/wikistack');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'mongodb connection error:'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

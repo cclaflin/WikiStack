@@ -23,6 +23,10 @@ var userSchema = new Schema({
   email: String
 });
 
+pageSchema.virtual('full_route').get(function () {
+  return '/wiki/' + this.url_name;
+});
+
 Page = mongoose.model('Page', pageSchema);
 User = mongoose.model('User', userSchema);
 

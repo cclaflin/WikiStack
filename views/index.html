@@ -1,6 +1,24 @@
 {% extends "layout.html" %}
 
+{% block navbar %}
+    {{title}} 
+{% endblock %}
+
+{% block navOp1 %}
+     Add Page
+{% endblock %}
+
 {% block content %}
-    <h1>{{title}}</h1>
-    <p>Welcome to {{title}}</p>
+    <h1>Browse My WikiStack</h1>
+    <p>
+      <ul>
+        <li><a> Fullstack Home </a></li>
+        <li><a> About Me </a></li>
+        <li><a> My Projects </a></li>
+        <li><a> My City </a></li>
+        <li><a> Code I've Writted </a></li>
+      </ul> 
+    </p>
+
+    <p> WikiStack, Fullstack Academy</p>
 {% endblock %}

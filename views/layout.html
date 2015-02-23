@@ -1,10 +1,19 @@
+<!-- layout.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title></title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>{% block title %}WikiStack{% endblock %}</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    {% block content %}{% endblock %}
+    <div class="navbar navbar-inverse" role="navigation" id="navBar">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand">{% block navbar %}{% endblock %}</a>
+        </div>
+        <a class="navbar-brand"> {% block navOp1 %}{% endblock %} </a>
+     </div>
+    </div>
+   {% block content %}{% endblock %}
   </body>
 </html>

@@ -1,3 +1,14 @@
+{% extends "layout.html" %}
+
+{% block navbar %}
+    {{title}} 
+{% endblock %}
+
+{% block navOp1 %}
+     Add Page
+{% endblock %}
+
+{% block content %}
 <form>
   <div class="form-group">
     <label for="inputPageTitle">PAGE TITLE</label>
@@ -11,3 +22,7 @@
 </form>
 
 <p>WikiStack, Fullstack Academy</p>
+
+</html>
+
+{% endblock %}

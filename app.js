@@ -8,7 +8,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+//var users = require('./routes/users');
+var add_routes = require('./routes/add');
 
 var app = express();
 app.engine('html', swig.renderFile);
@@ -26,7 +27,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+//app.use('/users', users);
+app.use('/add', add_routes);
 
 //Mongo DB connection
 mongoose.connect('mongodb://localhost/wikistack');
